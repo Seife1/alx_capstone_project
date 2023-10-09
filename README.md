@@ -19,24 +19,31 @@ Blogrammer is a user-friendly, responsive, and free-to-use blog platform designe
 * Differentiate between Admin and User roles, each with its own set of features and permissions.
 ## Features and Functionality <a id="features"><a>:
 <details>
-<summary>Admin<h5>Click to expand</h5></summary>
-* Manage user accounts and profiles.
-* Create, edit, and delete blog posts.
-* Access and process user requests.
-* Post blogs as an Admin.
+<summary>Admin  <h6>Click to expand</h6></summary>
+<ul>
+<li>Manage user accounts and profiles.</li>
+<li>Create, edit, and delete blog posts.</li>
+<li>Access and process user requests.</li>
+<li>Post blogs as an Admin.</li>
+</ul>
 </details>
 
 <details>
-<summary>User (Registered)<h5>Click to expand</h5></summary>
-* Update user profiles.
-* Create, manage, and delete their own blog posts.
-* Comment on blog posts created by others.
+<summary>User (Registered)  <h6>Click to expand</h6></summary>
+<ul>
+    <li>Update user profiles.</li>
+    <li>Create, manage, and delete their own blog posts</li>
+    <li>Comment on blog posts created by others.
+    </li>
+</ul>
 </details>
 
 <details>
-<summary>User (Unregistered)<h5>Click to expand</h5></summary>
-* Browse and read blog posts.
-* Must register to comment on blog posts.
+<summary>User (Unregistered)  <h6>Click to expand</h6></summary>
+<ul>
+<li>Browse and read blog posts.</li>
+<li>Must register to comment on blog posts</li>
+</ul>
 </details>
 
 ## Technologies Used <a id="tech"><a>:
@@ -53,9 +60,11 @@ Link to Live Demo - coming soon
 * Enhance the user interface for a more engaging experience.
 
 ## Contact Information <a id="Contact"></a>:
-**Name**: Seifegebreal Mosisa
-**Email**: mosisaseifegebreal@gmail.com
-**Social Media Links**
+<p><strong>Name:</strong> Seifegebreal Mosisa</p>
+<p><strong>Email:</strong>mosisaseifegebreal@gmail.com</p>
+<p><strong>Social Media Links</strong></p>
+
 * [Twitter](https://twitter.com/SeifegebrealM)
 * [LinkedIn](https://www.linkedin.com/in/seifemosi/)
-Feel free to reach out for any inquiries or suggestions! I appreciate your support.
+
+<p>Feel free to reach out for any inquiries or suggestions! I appreciate your support.</p>
