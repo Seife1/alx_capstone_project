@@ -16,7 +16,7 @@ from flask_mail import Message
 @app.route('/contact')
 @app.route('/home')
 def home():
-    posts = Post.query.all()
+    posts = Post.query.order_by(Post.id.desc()).all()
     return render_template("index.html", posts=posts)
 
 
