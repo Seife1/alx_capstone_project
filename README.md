@@ -18,23 +18,13 @@ Blogrammer is a user-friendly, responsive, and free-to-use blog platform designe
 * Provide an easy-to-navigate platform for visitors to read and explore blog content.
 * Differentiate between Admin and User roles, each with its own set of features and permissions.
 ## Features and Functionality <a id="features"><a>:
-<details>
-<summary>Admin  <h6>Click to expand</h6></summary>
-<ul>
-<li>Manage user accounts and profiles.</li>
-<li>Create, edit, and delete blog posts.</li>
-<li>Access and process user requests.</li>
-<li>Post blogs as an Admin.</li>
-</ul>
-</details>
 
 <details>
 <summary>User (Registered)  <h6>Click to expand</h6></summary>
 <ul>
     <li>Update user profiles.</li>
     <li>Create, manage, and delete their own blog posts</li>
-    <li>Comment on blog posts created by others.
-    </li>
+    <li>Comment on blog posts created by others.</li>
 </ul>
 </details>
 
@@ -52,9 +42,18 @@ Blogrammer is a user-friendly, responsive, and free-to-use blog platform designe
 * **Database**: MySQL
 
 ## Screenshots or Demo <a id="demo"><a>:
-Link to Live Demo - coming soon
+[Link to Live Demo](https://www.youtube.com/watch?v=13LYyQrLgmk)
 
 ## Roadmap and Future Enhancements <a id="roadmap"><a>:
+<details>
+<summary>Admin  <h6>Click to expand</h6></summary>
+    <ul>
+        <li>Manage user accounts and profiles.</li>
+        <li>Create, edit, and delete blog posts.</li>
+        <li>Access and process user requests.</li>
+        <li>Post blogs as an Admin.</li>
+    </ul>
+</details>
 * Implement social media integration for easier sharing via APIs.
 * Allow member users to receive new post notifications via email.
 * Enhance the user interface for a more engaging experience.
