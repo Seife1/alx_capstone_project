@@ -1,0 +1,56 @@
+{% extends 'uDashboard.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <link rel="stylesheet" href="../static/css/pages.css">
+    <link rel="stylesheet" href="../static/css/delet_modal.css">
+{% endblock %}
+
+{% block article %}
+    <div class="content">
+        <div class="person">
+            <img src="{{ url_for('static', filename='profile/' + post.author.img) }}" alt="author">
+            <div class="author_title">
+                <h3 class="title">{{ post.author.username }} <span class="date">. {{ post.date_posted.strftime('%Y-%m-%d') }} . {{ post.read_time }}min Read</span></h3>
+                {% if post.author == current_user %}
+                <div class="update_post_btn">
+                    <a href="{{ url_for('update_post', post_id=post.id) }}" class="update_btn">Update</a>
+                    <button type="button" class="del delete_modal">Delete</button>
+                </div>   
+                {% endif %}
+                <h1 class="new_post">{{ post.title }}</h1>
+                
+            </div>
+        </div>
+            
+        <div class="topic">
+            <div class="typo">
+                <img src="{{ url_for('static', filename='img/' + post.img or default_image) }}" alt="pic">
+                <div class="post_content">
+                    {{ post.content | safe }}
+                </div>
+            </div>
+
+            <div class="feedback">
+                <ul class="feedback">
+                    <li><a href="#" title="Like"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48"><path d="M15 8C8.925 8 4 12.925 4 19c0 11 13 21 20 23.326C31 40 44 30 44 19c0-6.075-4.925-11-11-11c-3.72 0-7.01 1.847-9 4.674A10.987 10.987 0 0 0 15 8Z"/></svg>  Like</a></li>
+                    <li><a href="#" title="Comment"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M5.25 3A3.25 3.25 0 0 0 2 6.25v8.5A3.25 3.25 0 0 0 5.25 18H6v2.75c0 1.03 1.176 1.618 2 1L13 18h5.75A3.25 3.25 0 0 0 22 14.75v-8.5A3.25 3.25 0 0 0 18.75 3H5.25Z"/></svg>  Comment</a></li>
+                    <li><a href="#" title="Share"><svg class="share" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 26 26"><path d="m20 12l-6.4-7v3.5C10.4 8.5 4 10.6 4 19c0-1.167 1.92-3.5 9.6-3.5V19l6.4-7z"/></svg>  Share</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--Delete Modal-->
+    <div class="modal">
+    <div class="modal_content">
+        <p>Are you sure you want to delete your post?</p>
+            <form action="{{ url_for('delete_post', post_id=post.id) }}" method="post">
+                <button type="submit" class="del">Delete Account</button>
+                <button type="reset" class="cancel" onclick="hideModal()">Cancel</button>
+            </form>
+    </div>
+    </div>
+    <script src="../static/js/delete_modal.js"></script>
+{% endblock %}

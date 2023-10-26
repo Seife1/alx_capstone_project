@@ -1,0 +1,70 @@
+{% extends 'uDashboard.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="static/css/latest_post.css">
+    <style>
+        aside.row{
+            margin-top: 3rem;
+        }
+
+        .content {
+            margin: 3rem auto;
+            padding-bottom: 0;
+        }
+    </style>
+{% endblock %}
+
+{% block article %}
+    <div class="content">
+        <div>
+            <div class="user">
+                <img src="{{ img_file }}" alt="user">
+                <div class="typo">
+                    <h1>{{ current_user.username }}</h1>
+                    <h3>{{ current_user.email }}</h3>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>✍️Account Info✍️</h2>
+            <form method="POST" action="/profile" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}  <!--prevent CSRF attacks-->
+                {{ form.username.label }}
+
+                {% if form.username.errors %}
+                    {{ form.username(class="error") }}
+                    {% for error in form.username.errors %}
+                        <small>{{ error }}</small>
+                    {% endfor %}
+                {% else %}
+                    {{ form.username(class="input_field") }}
+                {% endif %}
+                
+                {{ form.email.label }}
+
+                {% if form.email.errors %}
+                    {{ form.email(class="error") }}
+                    {% for error in form.email.errors %}
+                        <small>{{ error }}</small>
+                    {% endfor %}
+                {% else %}
+                    {{ form.email(class="input_field") }}
+                {% endif %}
+
+                <div class="pic">
+                    {{ form.picture.label() }}
+                    {{ form.picture(class="input_field") }}
+                    {% if form.picture.errors %}
+                        {% for error in form.picture.errors %}
+                            <small>{{ error }}</small>
+                        {% endfor %}
+                    {% endif %}
+
+                </div>
+                {{ form.submit(class="btn update") }}
+                
+            </form>
+        </div>
+    </div>
+    
+{% endblock %}

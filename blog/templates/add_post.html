@@ -1,0 +1,87 @@
+{% extends 'uDashboard.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="../../static/css/latest_post.css">
+    <link rel="shortcut icon" href="../../static/img/Blogicon.png" type="image/x-icon">
+    <style>
+        aside.row{
+            margin-top: 3rem;
+
+        }
+
+        .content {
+            margin: 3rem auto;
+            padding-bottom: 0;
+        }
+    </style>
+{% endblock %}
+
+{% block article %}
+    <div class="content">
+        <h1 class="title new_post">{{ header }}</h1>
+        <div>
+            <form action="{{ action }}" id="submitForm" method="post" enctype=multipart/form-data>
+                {{ form.hidden_tag() }}
+                {{ form.title.label }}
+
+                {% if form.title.errors %}
+                    {{ form.title(class="error") }}
+                    {% for error in form.title.errors %}
+                        <small>{{ error }}</small>
+                    {% endfor %}
+                {% else %}
+                    {{ form.title(class="input_field") }}
+                {% endif %}
+
+
+                {{ form.content.label }}
+
+                {% if form.content.errors %}
+                    {{ form.content(class="error") }}
+                    {% for error in form.content.errors %}
+                        <small>{{ error }}</small>
+                    {% endfor %}
+                {% else %}
+                    {{ form.content(id="content", class="input_field", cols=60, rows=20) }}
+                {% endif %}
+
+                {{ form.categories.label }}
+
+                {% if form.categories.errors %}
+                    {{ form.categories(class="error") }}
+                    {% for error in form.categories.errors %}
+                        <small>{{ error }}</small>
+                    {% endfor %}
+                {% else %}
+                    {{ form.categories(class="input_field", cols=60, rows=20) }}
+                {% endif %}
+
+                <div class="read_time">
+                    {{ form.read_time.label() }}
+                    {{ form.read_time(class="input_field") }}
+                    {% if form.read_time.errors %}
+                        {% for error in form.read_time.errors %}
+                            <small>{{ error }}</small>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+
+                <div class="pic">
+                    {{ form.picture.label() }}
+                    {{ form.picture(class="input_field") }}
+                    {% if form.picture.errors %}
+                        {% for error in form.picture.errors %}
+                            <small>{{ error }}</small>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+        
+                <div class="btn-form">
+                    {{ form.submit(class="btn login update") }}
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    <script src="../../static/js/text.js"></script>
+{% endblock %}

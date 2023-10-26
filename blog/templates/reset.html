@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% block header %}
+    <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/formstyle.css">
+{% endblock %}
+{% block content %}
+
+    <div class="container">
+        <div class="form">
+            <form action="/reset/{{ token }}" id="submitForm" method="post">
+                {{ form.hidden_tag() }}  <!--prevent CSRF attacks-->
+
+                {{ form.password.label }}
+
+                {% if form.password.errors %}
+                    {{ form.password(class="error") }}
+                    {% for error in form.password.errors %}
+                        <small>{{ error }}</small>
+                    {% endfor %}
+                {% else %}
+                    {{ form.password(class="input_field") }}
+                {% endif %}
+                
+
+                {{ form.confirm_password.label }}
+
+                {% if form.confirm_password.errors %}
+                    {{ form.confirm_password(class="error") }}
+                    {% for error in form.confirm_password.errors %}
+                        <small>{{ error }}</small>
+                    {% endfor %}
+                {% else %}
+                    {{ form.confirm_password(class="input_field") }}
+                {% endif %}
+        
+                {{ form.submit(class="btn login") }}
+            </form>
+        </div>
+    </div>
+    
+{% endblock %}

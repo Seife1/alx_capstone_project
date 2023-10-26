@@ -1,0 +1,176 @@
+/* ==============Header section============== */
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: Source Sans Pro;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.logo h1, .logo h1 a {
+    color: white;
+    font-family: Freehand521 BT;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+header {
+    background-image: url(../img/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    padding: 1rem 0 0.75rem 0;
+    
+}
+
+.header_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto 3rem;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+ul.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 5rem;
+}
+
+ul.navbar li {
+    list-style: none;
+    padding: 0.75rem;
+}
+
+ul.navbar li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+ul.navbar li:active {
+    color: rgb(26, 250, 26);
+}
+
+ul.navbar li a:hover {
+    color: rgb(26, 250, 26);
+}
+
+button, .login, .register {
+    color: white;
+    min-width: 3rem;
+    margin: auto 1rem auto 0;
+    padding: 0.5rem;
+    background-color: rgb(24, 7, 121);
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.login:hover, .register:hover {
+    transform: scale(1.2);
+    opacity: 0.95;
+}
+
+Button.btn {
+    padding: 0.5rem 1rem;
+    background-color: rgb(44, 252, 2);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0px 2px 10px 0px #015e0180;
+    transition: transform 0.3s; 
+}
+
+Button.log {
+    margin-left: 0.5rem;
+}
+
+
+Button.btn:hover {
+    background-color: rgba(1, 1, 75, 0.7);
+    color: rgb(44, 252, 2);;
+}
+
+.tag_line {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    max-width: 600px;
+
+}
+
+.tag_line h1 {
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 0;
+}
+
+.tag_line  p{
+    font-size: 20px;
+    font-weight: 500;
+    color: #27F83C;
+    margin-top: 0;
+}
+
+.tag_line  p:hover {
+    background-color: rgba(166, 166, 247, 0.2);
+}
+
+.tag_line .btn{
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/*  ================= A flashed message to notify the user ==============*/
+
+small {
+    max-width: 17rem;
+    font-weight: bold;
+    color: red;
+    margin-bottom: 0.25rem;
+    align-items: center;
+}
+.success, .unsuccess, .warning {
+    color: rgb(255, 255, 255);
+    background-color: rgb(3, 228, 3);
+    /* font-weight: bold; */
+    max-width: 60%;
+    margin: 0 auto;
+    padding: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    text-align: center;
+}
+
+.unsuccess {
+    background-color: red;
+    max-width: 25%;
+}
+
+.error {
+    border: red solid;
+}
+
+.warning {
+    color: blue;
+    background-color: rgb(255, 255, 0);
+    max-width: 25%;
+}

@@ -1,0 +1,86 @@
+
+/* ============Form============ */
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 3rem auto;
+    height: 62vh;
+}
+input {
+    text-align: left;
+    font-size: 12px;
+    margin: 0.5rem auto 1rem auto;
+}
+
+input.input_field {
+    padding: 0.25rem;
+    width: 100%;
+    border-radius: 4px;
+    border: none;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+form {
+    background-color: #81f3edea;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: solid 2px #000;
+    border-radius: 2rem;
+    margin-bottom: 0.5rem;
+    padding: 2rem;
+}
+
+
+.inline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inline_check {
+    padding: 0;
+    margin: 0;
+}
+
+.inline_check_label {
+    padding-left: 0.25rem;
+    font-size: 14px;
+}
+
+.account {
+    color: #0b0124;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+}
+
+button, .login, .register {
+    color: white;
+    min-width: 3rem;
+    margin: auto;
+    padding: 0.5rem;
+    background-color: rgb(24, 7, 121);
+    border-radius: 0.5rem;
+    border: none;
+}
+.login:hover, .register:hover {
+    transform: scale(1.2);
+    opacity: 0.95;
+}
+.login, .register {
+    margin: 1rem auto;
+}
+.btn:hover {
+    cursor: pointer;
+}
+
+

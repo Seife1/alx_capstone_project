@@ -1,0 +1,94 @@
+/* ==============Footer section============== */
+footer {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(8, 5, 63);
+}
+
+.logo_foot {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto 5rem;
+}
+
+.up {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+
+}
+.up h1 {
+    color: white;
+    font-family: Freehand521 BT;
+    font-size: 14px;
+    font-weight: 900;
+}
+.up ul {
+    display: flex;
+}
+
+.up ul li {
+    list-style: none;
+}
+
+.up ul a{
+    text-decoration: none;
+    color: white;
+    margin: 0 1rem;
+}
+
+.footer_img {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+    border-radius: 4px;
+}
+
+.copy {
+    text-align: center;
+    color: #a79b9b;
+    margin: 2rem;
+}
+
+/* ================================== */
+@keyframes up {
+    0% {
+        top: 0px;
+    }
+
+    50% {
+        top: 25px;
+    }
+
+    100% {
+        top: 0px;
+    }
+
+}
+
+.move_top {
+    position: relative;
+    width: 1000px;
+}
+
+span.top {
+    display: grid;
+    text-align: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(10, 10, 10, 0.5);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    animation: up 2s ease-in-out infinite;
+    margin: 40rem 2rem 3rem 0;
+}
+
+span.top a {
+    font-size: 24px;
+    color: white;
+}

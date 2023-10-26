@@ -1,0 +1,138 @@
+{% extends 'layout.html' %}
+{% block head %}
+    <link rel="stylesheet" href="static/css/main.css">
+    <style>
+        #home label {
+                display: flex;
+                align-items: center;
+                font-size: 18px;
+                font-weight: 600;
+                margin: auto
+            }
+
+        #home label input.search {
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+                font-size: 20px;
+                font-weight: 300;
+                padding: 0.5rem 2rem;
+            }
+
+        #home label input.btn_search {
+                font-size: 20px;
+                font-weight: 300;
+                padding: 8px 6px;
+                background-color: aqua;
+                cursor: pointer;
+            }
+
+        #home form.bar {
+                display: flex;
+                background-color: transparent;
+                border: none;
+                text-align: center;
+                border-radius: 2rem;
+                margin-bottom: 0.5rem;
+                padding: 2rem;
+            }
+    </style>
+{% endblock %}
+
+{# Body block ##}
+
+{% block header%}
+<div class="tag tag_line">
+    <h1>Blogrammer</h1>
+    <p>The ultimate platform for programmers to unleash their thoughts and passions with the world.</p>
+    <Button type="button" class="btn" onclick="window.location.href='/register'">Register For More</Button>
+</div>
+{% endblock %}
+{% block content %}
+
+<section id="home">
+    <div class="input">
+        <form class="bar" action="/search" method="post">
+            {{ form.hidden_tag() }}
+            <label>
+                <a href="#">Search</a>{{ form.search(class="search") }}
+                {{ form.submit(class="btn_search") }}
+            </label>
+        </form>
+        <button class="home_btn" type="button"  onclick="window.location.href='/add_post'">Post Your Own</button>
+    </div>
+    
+    <div class="content">
+        {% for post in posts %}
+        <div class="blog">
+            <div class="person">
+                <img src="{{ url_for('static', filename='profile/' + post.author.img) }}" alt="author">
+                <h3>{{ post.author.username }}<span class="date">. {{ post.date_posted.strftime('%Y-%M-%d') }} . {{ post.read_time }}min Read</span></h3>
+            </div>
+
+            <div class="typo">
+                <h2><a href="{{ url_for('pages', post_id=post.id) }}">{{ post.title }}</a></h2>
+                {% if post.img %}
+                    <img src="{{ url_for('static', filename='img/' + post.img) }}" alt="pic">
+                {% else %}
+                    <img src="{{ url_for('static', filename='img/blogrammer.png') }}" alt="default_pic">
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>    
+</section>
+
+<!--About page-->
+
+<section id="about" class="about">
+    <div class="blogrammer">
+        <h5>ABOUT US</h5>
+        <h2 class="title">BLOGRAMMER</h2>
+        <div class="content">
+            <p>
+                where the art of blogging intersects with programming expertise – the ultimate platform for programmers to share their thoughts and passions with the world. It's also perfect for non-programmers who are curious about programming. Blogrammer is a fun and educational blog site that teaches us about exciting programming topics, categorizing content into Web Development, Mobile App Development, Testing, Data Science, Machine Learning, Security and Privacy, DevOps and SRE, Databases, Cloud Computing, Developer Tools, Fundamentals, Open Source, and Blockchain and many more.
+            </p>
+        </div> 
+    </div>
+    <div class="image">
+        <img src="../static/img/Blog.jpg" alt="contact">
+    </div>
+</section>
+
+<!--Contact page-->
+
+<section id="contact" class="contact">
+    <div class="comment">
+        <h5>CONTACT</h5>
+        <h2>REACH OUT: LET'S CONNECT</h2>
+        <form action="submit" method="post">
+                <label for="name">YOUR NAME</label>
+                <input type="text" id="name" name="name"><br>
+
+                <label for="phone">PHONE No</label>
+                <input type="tel" id="phone" name="phone"><br>
+
+                <label for="email">EMAIL</label>
+                <input type="email" id="email" name="email"><br>
+
+                <label for="msg">COMMENT</label>
+                <textarea name="comment" id="msg" cols="30" rows="6" placeholder="Please! Type Your Comment Here."></textarea><br>
+
+                <label><input type="checkbox" id="agree" name="agree" checked> Agree with terms and privacy</label>
+                <div class="confirm_btn">
+                    <button type="reset" class="btn btn_cancel">Cancel</button>
+                    <button type="submit" class="btn btn_submit">Submit</button>
+                </div>  
+        </form> 
+    </div>
+    <div class="image">
+        <img src="../static/img/Get in touch.png" alt="contact">
+    </div>
+</section>
+{% endblock %}
+
+{% block top %}
+<div class="move_top">
+    <span class="top"> <a href="#">↑</a></span>
+</div>
+{% endblock %}
