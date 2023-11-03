@@ -218,24 +218,4 @@ class Like(db.Model):
     def __repr__(self):
         return f"User('{self.like}')"
 
-# class Media(db.Model):
-#     """A table used to store the video and image files"""
-#     __tablename__ = "medias"
-
-#     id = db.Column('ID', db.Integer, primary_key=True)
-#     img = db.Column('Img', db.String(30), nullable=False, default='blogrammer.png')
-#     description = db.Column('Description', db.Text)
-
-#     # Foreign key relationship with Post
-#     post_id = db.Column('post_id', db.Integer, db.ForeignKey('posts.id'))
-
-#     # Foreign key relationship with Admin
-#     admin_id = db.Column('admin_id', db.Integer, db.ForeignKey('admins.id'))
-
-#     # Foreign key relationship with User
-#     user_id = db.Column('user_id', db.Integer, db.ForeignKey('users.id'))
-
-
-#     def __repr__(self):
-#         return f"User('{self.img}', '{self.description}')"
     
